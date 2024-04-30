@@ -5,7 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
     
-
     - name: Code Checkout 
       uses: actions/checkout@v4
 
@@ -23,6 +22,11 @@ jobs:
     - name: Build the project
       run: mvn clean package 
 
-    - name: list file in target folder
-      run: ls -l target      
+    - name: upload artifact
+      uses: actions/upload-artifact@v4
+      with: 
+        name: java-project
+        path: target/cloud-hosting-service.war    
+
+                  
          
