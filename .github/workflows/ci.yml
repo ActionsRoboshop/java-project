@@ -8,42 +8,42 @@ jobs:
     - name: Code Checkout 
       uses: actions/checkout@v4
 
-    - name: pwd 
-      run: | 
-        echo "${PWD}" 
-        echo "${{ github.workspace }}" 
-    - name: Set up java 
-      uses: actions/setup-java@v4
-      with:
-        distribution: 'oracle'
-        java-version: '17'
-        cache: 'maven'
+    # - name: pwd 
+    #   run: | 
+    #     echo "${PWD}" 
+    #     echo "${{ github.workspace }}" 
+    # - name: Set up java 
+    #   uses: actions/setup-java@v4
+    #   with:
+    #     distribution: 'oracle'
+    #     java-version: '17'
+    #     cache: 'maven'
 
-    - name: Build the project
-      run: mvn clean package 
+    # - name: Build the project
+    #   run: mvn clean package 
 
     - name: upload artifact
       uses: actions/upload-artifact@v4
       with: 
         name: java-project
-        path: | 
-          target/cloud-hosting-service.war
-          Dockerfile
-        retention-days: 1   
+        path: |
+          Dockerfile123
+        retention-days: 1
+        if-no-files-found: warn   
 
-  Deploy: 
-    needs: CI_JOB
-    runs-on: ubuntu-latest
-    steps: 
-    - run: echo ${PWD}
+  # Deploy: 
+  #   needs: CI_JOB
+  #   runs-on: ubuntu-latest
+  #   steps: 
+  #   - run: echo ${PWD}
 
-    - uses: actions/download-artifact@v4
-      with: 
-       name: java-project
-       path: .
+  #   - uses: actions/download-artifact@v4
+  #     with: 
+  #      name: java-project
+  #      path: .
 
-    - name: list download artifacts
-      run: ls -l           
+  #   - name: list download artifacts
+  #     run: ls -l           
 
                   
          
