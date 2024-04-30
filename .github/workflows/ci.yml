@@ -27,6 +27,19 @@ jobs:
       with: 
         name: java-project
         path: target/cloud-hosting-service.war    
+  Deploy: 
+    needs: CI_JOB
+    runs-on: ubuntu-latest
+    steps: 
+    - run: echo ${PWD}
+
+    - uses: actions/download-artifact@v4
+      with: 
+       name: java-project
+       path: .
+
+    - name: list download artifacts
+      run: ls -l           
 
                   
          
