@@ -1,0 +1,39 @@
+name: GitHub Actions for printTable
+on: [workflow_dispatch]
+jobs:
+  job1: 
+    runs-on: ubuntu-latest
+    steps: 
+    - name: 5-Table 
+      run: | 
+        echo ' 
+        table_no=$1
+        last_no=$2
+        i=0
+        while [ $i -le $last_no ]
+        do 
+          res=$(( $table_no * $i ))
+          echo "$table_no * $i = $res"
+          i=$(( i + 1 ))
+        done
+        ' > table.sh
+
+    - name: upload artifact
+      uses: actions/upload-artifact@v4
+      with: 
+        name: printTable
+        path: ./table.sh
+        retention-days: 1
+
+  job2: 
+    needs: job1 
+    runs-on: ubuntu-latest
+    steps: 
+    - name: download artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: printTable
+        path: .
+    - name: Run table 
+      run: bash table.sh 5 15
+         
