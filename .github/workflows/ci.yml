@@ -1,0 +1,24 @@
+name: GitHub Actions for java project
+on: [workflow_dispatch]
+jobs:
+  CI_JOB: 
+    runs-on: ubuntu-latest
+    steps: 
+    
+    - name: Code Checkout 
+      uses: actions/checkout@v4
+     
+    - name: Set up java 
+      uses: action/setup-java@v4 
+      with:
+        distribution: 'oracle'
+        java-version: '11'
+        cache: 'maven'
+
+    - name: to get java java-version 
+      run: java -version 
+
+    - name: To check maven -version
+      run: mvn -v  
+
+         
