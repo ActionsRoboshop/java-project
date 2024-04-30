@@ -1,4 +1,4 @@
-name: GitHub Actions for java project
+name: GitHub Actions for printTable
 on: [workflow_dispatch]
 jobs:
   job1: 
