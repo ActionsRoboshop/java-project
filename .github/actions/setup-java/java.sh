@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=$1
+#version=$1
 
 apt-get  update && apt-get install curl unzip -y
 
