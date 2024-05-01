@@ -10,6 +10,8 @@ apt-get  update && apt-get install curl unzip -y
 
  apt-get install openjdk-17-jdk -y
 
+ java -version
+
 # apt-get install maven -y
 
 #curl -L -o sonar.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.8.1.3023-linux.zip
