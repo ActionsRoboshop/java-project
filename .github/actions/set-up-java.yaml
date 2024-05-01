@@ -1,0 +1,11 @@
+name: This action set up java
+description: "This action set up java-11"
+inputs: 
+    java-version:
+      required: true
+      description: "needs java version"
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
+    args: 
+    - ${{ inputs.java-version }} 
