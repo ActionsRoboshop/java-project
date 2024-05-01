@@ -16,7 +16,11 @@ curl -L -o sonar.zip https://binaries.sonarsource.com/Distribution/sonar-scanner
 
 unzip -d /opt/ sonar.zip 
 
-ln -s /opt/sonar-scanner-4.8.1.3023-linux/bin/sonar-scanner /bin/sonar-scanner
+#ln -s /opt/sonar-scanner-4.8.1.3023-linux/bin/sonar-scanner /bin/sonar-scanner
+
+echo "export PATH=/opt/sonar-scanner-4.8.1.3023-linux/bin:\${PATH}" > /etc/profile.d/maven.sh
+
+source /etc/profile.d/maven.sh
 
 # export PATH="/opt/sonar-scanner-4.8.1.3023-linux/bin:${PATH}"
 
