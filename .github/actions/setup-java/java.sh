@@ -16,7 +16,9 @@ curl -L -o sonar.zip https://binaries.sonarsource.com/Distribution/sonar-scanner
 
 unzip -d /opt/ sonar.zip
 
-export PATH=/opt/sonar-scanner-4.8.1.3023-linux/bin:${PATH}
+export PATH="/opt/sonar-scanner-4.8.1.3023-linux/bin:${PATH}"
+
+sonar-scanner --version
 
 
 
