@@ -8,10 +8,10 @@ jobs:
     - name: Code Checkout 
       uses: actions/checkout@v4
 
-    # - name: Set up java 
-    #   uses: ./.github/actions/setup-java
-    #   with:
-    #     java-version: "11"
+    - name: Set up java 
+      uses: ./.github/actions/setup-java
+      with:
+        java-version: "17"
 
     - name: sonar-scanner 
       run: |  
