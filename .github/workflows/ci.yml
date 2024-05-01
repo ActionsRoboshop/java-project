@@ -14,6 +14,11 @@ jobs:
         java-version: "11"
 
     - name: sonar-scanner 
+      run: |  
+        java -version 
+        mvn -v    
+
+    - name: sonar-scanner 
       run: /opt/sonar-scanner-4.8.1.3023-linux/bin/sonar-scanner --version
 
     # - name: sonar push
