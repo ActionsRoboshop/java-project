@@ -14,7 +14,7 @@ jobs:
         java-version: "11"
 
     - name: sonar push
-      run: sonar-scanner -Dsonar.host.url=http://18.208.246.59:9000 -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.projectKey=javaProject  
+      run: /opt/sonar-scanner-4.8.1.3023-linux/bin/sonar-scanner -Dsonar.host.url=http://18.208.246.59:9000 -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.projectKey=javaProject  
 
     # - name: Build the project
     #   run: mvn clean package 
