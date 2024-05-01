@@ -8,6 +8,9 @@ jobs:
     - name: Code Checkout 
       uses: actions/checkout@v4
 
+    - name: Before 
+      run: java -version  
+
     # - name: Set up java 
     #   uses: ./.github/actions/setup-java
     #   with:
@@ -18,7 +21,7 @@ jobs:
        distribution: 'oracle' # See 'Supported distributions' for available options
        java-version: '17'
 
-    - name: sonar-scanner 
+    - name: After
       run: |  
         java -version
           
