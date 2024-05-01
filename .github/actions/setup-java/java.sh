@@ -8,7 +8,7 @@ apt-get  update && apt-get install curl unzip -y
 
 # apt-get install -y nodejs
 
- apt-get install openjdk-${version}-jdk -y
+ apt-get install openjdk-17-jdk -y
 
 # apt-get install maven -y
 
