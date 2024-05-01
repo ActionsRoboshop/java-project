@@ -13,11 +13,14 @@ jobs:
       with:
         java-version: "11"
 
-    - name: Build the project
-      run: mvn clean package 
+    - name: sonar push
+      run: sonar-scanner -Dsonar.host.url=http://18.208.246.59:9000 -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.projectKey=javaProject  
 
-    - name: list
-      run: ls -l target
+    # - name: Build the project
+    #   run: mvn clean package 
+
+    # - name: list
+    #   run: ls -l target
          
 
                   
