@@ -1,7 +1,6 @@
 #!/bin/bash
 
 #version=$1
-sh -c "git config --global --add safe.directory $PWD"
 # apt-get  update && apt-get install curl unzip -y
 
 apt-get  update && apt-get install git -y
@@ -9,7 +8,7 @@ apt-get  update && apt-get install git -y
 sh -c "git config --global --add safe.directory $PWD"
 
 # curl -sL https://deb.nodesource.com/setup_20.x | bash
-
+# S
 # apt-get install -y nodejs
 
 apt-get install openjdk-17-jdk -y
