@@ -17,7 +17,7 @@ jobs:
       run: |  
         java -version 
         mvn -v
-        sonar-scanner --version    
+          
 
 
     # - name: sonar push
